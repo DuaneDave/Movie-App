@@ -7,7 +7,14 @@
   --ball-color: black;
 }
 
-
+body.dark-mode {
+  --primary-color: rgba(3, 3, 1, 0.945);
+  --header-color: rgb(8, 8, 8);
+  --input-bg: rgba(39, 38, 38, 0.671);
+  --search-color: white;
+  --theme-color: rgb(201, 172, 9);
+  --ball-color: rgb(124, 124, 99);
+}
 
 * {
   padding: 0;
@@ -65,7 +72,8 @@ input:focus {
   margin-left: 1rem;
 }
 
-.bx-moon, .bx-sun {
+.bx-moon,
+.bx-sun {
   color: var(--theme-color);
 }
 
