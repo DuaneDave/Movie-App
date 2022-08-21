@@ -49,3 +49,19 @@ form.addEventListener('submit', (e) => {
 
 getData(url);
 
+const ball = document.querySelector('.ball');
+const body = document.body;
+const selectedTheme = localStorage.getItem('selected-theme')
+
+const checkTheme = () => {
+  body.classList.contains('dark-mode')? 'dark' : 'light';
+}
+
+const theme = document.querySelector('.theme');
+theme.addEventListener('click', (e) => {
+  if(e.target.classList.contains('ball')){
+    ball.classList.toggle('active')
+    body.classList.toggle('dark-mode')
+    localStorage.setItem('selected-theme', checkTheme())
+  }
+})
