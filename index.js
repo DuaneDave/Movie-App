@@ -32,5 +32,10 @@ const createCards = (obj) => {
   });
 };
 
+const errorMsg = () => {
+  container.innerHTML = `
+    <p class="no-movie">No Movies Found</p>
+  `;
+};
 
 
