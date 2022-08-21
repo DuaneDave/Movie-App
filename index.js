@@ -1,4 +1,16 @@
+const container = document.querySelector('.movie-container');
+const form = document.querySelector('form');
+const url =
+  'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7dc6ebc456b7af85b54afceb8881055a';
+const search =
+  'https://api.themoviedb.org/3/search/movie?api_key=7dc6ebc456b7af85b54afceb8881055a&query=';
 
+const getData = async (url) => {
+    const response = await fetch(url);
+    const { results } = await response.json();
+    console.log(results);
+    createCards(results);
+};
 
 const createCards = (obj) => {
   const path = 'https://image.tmdb.org/t/p/w1280';
