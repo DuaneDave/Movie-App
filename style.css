@@ -221,9 +221,9 @@ button i:hover {
 .no-movie {
   color: rgba(255, 255, 255, 0.411);
   font-size: 2rem;
-  margin-top: 20%;
+  margin-top: 10%;
   background-color: black;
-  padding: 2em;
+  padding: 2em 1.5em;
 }
 
 @media screen and (max-width: 768px) {

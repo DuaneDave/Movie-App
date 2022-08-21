@@ -6,9 +6,12 @@ const search =
   'https://api.themoviedb.org/3/search/movie?api_key=7dc6ebc456b7af85b54afceb8881055a&query=';
 
 const getData = async (url) => {
-    const response = await fetch(url);
-    const { results } = await response.json();
-    createCards(results);
+  const { data } = await axios(url);
+  if (data.results.length === 0) {
+    errorMsg('No Movies Found');
+  }
+  createCards(data.results);
+  console.log(data);
 };
 
 const createCards = (obj) => {
@@ -23,7 +26,9 @@ const createCards = (obj) => {
           <div class="title">
             <p>${movie.title}</p>
           </div>
-          <span class="rating">${movie.vote_average}<i class="bx bx-star"></i></span>
+          <span class="rating">${
+            movie.vote_average
+          }<i class="bx bx-star"></i></span>
         </div>
         <p class="movie-desc">${short}</p>
       </div>
@@ -31,9 +36,9 @@ const createCards = (obj) => {
   });
 };
 
-const errorMsg = () => {
+const errorMsg = (msg) => {
   container.innerHTML = `
-    <p class="no-movie">No Movies Found</p>
+    <p class="no-movie">${msg}</p>
   `;
 };
 
@@ -51,22 +56,23 @@ getData(url);
 const ball = document.querySelector('.ball');
 const theme = document.querySelector('.theme');
 const body = document.body;
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedBtn = localStorage.getItem('selected-button')
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedBtn = localStorage.getItem('selected-button');
 
-const checkTheme = () => body.classList.contains('dark-mode')? 'dark' : 'light';
+const checkTheme = () =>
+  body.classList.contains('dark-mode') ? 'dark' : 'light';
 
 theme.addEventListener('click', (e) => {
-  if(e.target.classList.contains('ball')){
-    ball.classList.toggle('active')
-    body.classList.toggle('dark-mode')
-    localStorage.setItem('selected-theme', checkTheme())
+  if (e.target.classList.contains('ball')) {
+    ball.classList.toggle('active');
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('selected-theme', checkTheme());
   }
-})
+});
 
 if (selectedTheme) {
   body.classList[selectedTheme === 'dark' ? 'add' : 'remove']('dark-mode');
-  if(body.classList.contains('dark-mode')){
-    ball.classList.add('active')
+  if (body.classList.contains('dark-mode')) {
+    ball.classList.add('active');
   }
 }
