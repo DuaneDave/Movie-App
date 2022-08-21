@@ -65,3 +65,10 @@ theme.addEventListener('click', (e) => {
     localStorage.setItem('selected-theme', checkTheme())
   }
 })
+
+if (selectedTheme) {
+  body.classList[selectedTheme === 'dark' ? 'add' : 'remove']('dark-mode');
+  if(body.classList.contains('dark-mode')){
+    ball.classList.add('active')
+  }
+}
