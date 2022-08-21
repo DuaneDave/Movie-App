@@ -38,4 +38,14 @@ const errorMsg = () => {
   `;
 };
 
+form.addEventListener('submit', (e) => {
+  const input = document.querySelector('input').value;
+  e.preventDefault();
+  console.log(search + input);
+  container.innerHTML = '';
+  getData(search + input);
+  form.reset();
+});
+
+getData(url);
 
