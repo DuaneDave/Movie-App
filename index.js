@@ -11,7 +11,6 @@ const getData = async (url) => {
     errorMsg('No Movies Found');
   }
   createCards(data.results);
-  console.log(data);
 };
 
 const createCards = (obj) => {
@@ -45,7 +44,6 @@ const errorMsg = (msg) => {
 form.addEventListener('submit', (e) => {
   const input = document.querySelector('input').value;
   e.preventDefault();
-  console.log(search + input);
   container.innerHTML = '';
   getData(search + input);
   form.reset();
