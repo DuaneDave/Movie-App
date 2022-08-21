@@ -8,7 +8,6 @@ const search =
 const getData = async (url) => {
     const response = await fetch(url);
     const { results } = await response.json();
-    console.log(results);
     createCards(results);
 };
 
