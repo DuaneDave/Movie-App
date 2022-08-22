@@ -1,17 +1,7 @@
 const container = document.querySelector('.movie-container');
 const form = document.querySelector('form');
-const url =
-  'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7dc6ebc456b7af85b54afceb8881055a';
-const search =
-  'https://api.themoviedb.org/3/search/movie?api_key=7dc6ebc456b7af85b54afceb8881055a&query=';
-
-const getData = async (url) => {
-  const { data } = await axios(url);
-  if (data.results.length === 0) {
-    errorMsg('No Movies Found');
-  }
-  createCards(data.results);
-};
+const url = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7dc6ebc456b7af85b54afceb8881055a';
+const search = 'https://api.themoviedb.org/3/search/movie?api_key=7dc6ebc456b7af85b54afceb8881055a&query=';
 
 const createCards = (obj) => {
   const path = 'https://image.tmdb.org/t/p/w1280';
@@ -25,9 +15,7 @@ const createCards = (obj) => {
           <div class="title">
             <p>${movie.title}</p>
           </div>
-          <span class="rating">${
-            movie.vote_average
-          }<i class="bx bx-star"></i></span>
+          <span class="rating">${movie.vote_average}<i class="bx bx-star"></i></span>
         </div>
         <p class="movie-desc">${short}</p>
       </div>
@@ -39,6 +27,14 @@ const errorMsg = (msg) => {
   container.innerHTML = `
     <p class="no-movie">${msg}</p>
   `;
+};
+
+const getData = async (url) => {
+  const { data } = await axios(url);
+  if (data.results.length === 0) {
+    errorMsg('No Movies Found');
+  }
+  createCards(data.results);
 };
 
 form.addEventListener('submit', (e) => {
@@ -53,12 +49,10 @@ getData(url);
 
 const ball = document.querySelector('.ball');
 const theme = document.querySelector('.theme');
-const body = document.body;
+const { body } = document;
 const selectedTheme = localStorage.getItem('selected-theme');
-const selectedBtn = localStorage.getItem('selected-button');
 
-const checkTheme = () =>
-  body.classList.contains('dark-mode') ? 'dark' : 'light';
+const checkTheme = () => (body.classList.contains('dark-mode') ? 'dark' : 'light');
 
 theme.addEventListener('click', (e) => {
   if (e.target.classList.contains('ball')) {
