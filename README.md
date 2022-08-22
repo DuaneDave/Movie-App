@@ -7,9 +7,7 @@ This is a movie app +built with HTML | CSS | JAVASCRIPT + API, where a user can 
 - HTML
 - Javascript
 - Css
-- Webpack
-- Webpack-dev server
-- Jest
+- API
 
 ## To get a local copy up and running follow these simple example steps.
 
