@@ -15,6 +15,10 @@ This is a movie app built with HTML | CSS | JAVASCRIPT + API, where a user can s
 - open in your vs code terminal and run live 
 
 
+## Live Version
+Check to se the live version [here](https://github.com/DuaneDave/Movie-App/deployments/activity_log?environment=github-pages)
+
+
 ## Authors 1
 
 👤 **Obiebi Okiemute David**
