@@ -1,3 +1,5 @@
+/* global axios */
+
 const container = document.querySelector('.movie-container');
 const form = document.querySelector('form');
 const url = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7dc6ebc456b7af85b54afceb8881055a';
@@ -25,7 +27,7 @@ const createCards = (obj) => {
 
 const errorMsg = (msg) => {
   container.innerHTML = `
-    <p class="no-movie">${msg}</p>
+    <p class="no-movie">${msg}.</p>
   `;
 };
 

@@ -162,7 +162,6 @@ button i:hover {
 
 .card img {
   width: 200px;
-
   transition: 0.4s ease-in-out;
 }
 
@@ -181,6 +180,7 @@ button i:hover {
 .card:hover .movie-info {
   bottom: 0;
 }
+
 .movie-title {
   align-items: flex-start;
   justify-content: space-between;
