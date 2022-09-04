@@ -25,7 +25,7 @@ const createCards = (obj) => {
 
 const errorMsg = (msg) => {
   container.innerHTML = `
-    <p class="no-movie">${msg}</p>
+    <p class="no-movie">${msg}.</p>
   `;
 };
 
