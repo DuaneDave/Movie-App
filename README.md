@@ -1,5 +1,5 @@
 # Movie-App
-This is a movie app built with HTML | CSS | JAVASCRIPT + API, where a user can see popular movies and search any movie of their choice. It provides light and dark mode for accessibility and each theme persist in the browser via local storage
+This is a movie app built with HTML | CSS | JAVASCRIPT + API, where a user can see popular movies and search any movie of their choice. It provides light and dark mode for accessibility and each theme persist in the browser via local storage.
 
 ![screenshot](./asset/img1.png)
 ![screenshot](./asset/img2.png)
