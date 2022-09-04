@@ -15,6 +15,15 @@ This is a movie app built with HTML | CSS | JAVASCRIPT + API, where a user can s
 
 - Clone this repo to your machine by using Git clone: Git clone `https://github.com/DuaneDave/Movie-App.git`
 - open in your vs code terminal and run live 
+- `npm install -g @lhci/cli@0.7.x`
+- `npm install --save-dev hint@6.x`
+- `npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x`
+
+### Run the following tests:
+
+- `npx hint .`
+- `npx stylelint "\*_/_.{css,scss}"`
+- `npx eslint .`
 
 
 ## Live Version
